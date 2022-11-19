@@ -1,0 +1,23 @@
+{
+  "name": "generate-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "wakapi": "./index.ts"
+  },
+  "scripts": {
+    "test": "deno run --allow-env --allow-read --allow-write index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wakababa/wakapi-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wakababa/wakapi-typescript/issues"
+  },
+  "homepage": "https://github.com/wakababa/wakapi-typescript#readme"
+}

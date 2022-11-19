@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52eb7eab-d474-4245-8630-80ace2a30b47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deno.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deno-migration-wakapi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/connection.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668845500752</updated>
-      <workItem from="1668845502129" duration="4686000" />
+      <workItem from="1668845502129" duration="5512000" />
     </task>
     <servers />
   </component>
