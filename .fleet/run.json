@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "start",
+      "program": "deno run --allow-env --allow-read --allow-write index.ts",
+    },
+    {
+      "name": "Run my script",
+      "type": "command",
+      "program": "$USER_HOME$/script.sh",
+    }
+  ]
+}

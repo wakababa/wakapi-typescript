@@ -1,6 +1,10 @@
 import {doPlural} from "../../util.js"
 
-const modelTemplate = ({name,prop}) => {
+interface IModelTemplate{
+    name:String
+    prop:Object
+}
+const modelTemplate = ({name,prop}:IModelTemplate):string => {
   const bignames =  JSON.stringify(doPlural(name,true))
   const plural = JSON.stringify(doPlural(name,false))
   const myprop = JSON.stringify(prop)

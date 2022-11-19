@@ -1,6 +1,9 @@
-const routeTemplate = ({ apiname }) => {
-  const pathurl = `/${apiname}s`;
-  const pathid = `/${apiname}s/:id`;
+interface IRouteTemplate{
+    apiName:String
+}
+const routeTemplate = ({ apiName }):object => {
+  const pathurl = `/${apiName}s`;
+  const pathid = `/${apiName}s/:id`;
   const data = {
     routes: [
       {

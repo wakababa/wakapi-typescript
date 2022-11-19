@@ -1,14 +1,18 @@
-const controllerTemplate = ({ apiname, prop }) => {
+interface IControllerTemplate{
+    apiName:String,
+    prop:Object
+}
+const controllerTemplate = ({ apiName, prop }:IControllerTemplate):string => {
   return`
      const express = require('express')
      const router = express.Router();
-     const ${apiname}Modal = require("../models/${apiname}");
+     const ${apiName}Modal = require("../models/${apiName}");
 
-     // api name ${apiname} 
+     // api name ${apiName}
 
      router.get("/", async(req, res) => {
 
-      res.send(await  ${apiname}Modal.find())
+      res.send(await  ${apiName}Modal.find())
 });
 router.get("/props", async(req, res) => {
    const data = [${prop.map((item) => JSON.stringify(item))}]
@@ -17,7 +21,7 @@ router.get("/props", async(req, res) => {
 
 router.post("/", async (req, res) => {
     const {${prop.map((item) => item)}} = req.body
-      const post1 = new ${apiname}Modal({${prop.map((item) => item)}});
+      const post1 = new ${apiName}Modal({${prop.map((item) => item)}});
    await   post1.save((err,data)=>{
           if(err){
               res.send(err)
@@ -28,10 +32,10 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/:id",async(req,res)=>{
-     res.send(await ${apiname}Modal.findById(req.params.id))
+     res.send(await ${apiName}Modal.findById(req.params.id))
 })
 router.put("/:id",async (req,res)=>{
-     res.send(await  ${apiname}Modal.findByIdAndUpdate(
+     res.send(await  ${apiName}Modal.findByIdAndUpdate(
         { _id: req.params.id },
         req.body,
         { new: true, useFindAndModify: false }
@@ -39,7 +43,7 @@ router.put("/:id",async (req,res)=>{
   })
 
   router.delete("/:id",async(req,res)=>{
-     res.send(await ${apiname}Modal.findByIdAndDelete({ _id: req.params.id }))
+     res.send(await ${apiName}Modal.findByIdAndDelete({ _id: req.params.id }))
 })
 
 

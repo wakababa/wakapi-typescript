@@ -1,5 +1,9 @@
 import {readParseFile} from '../../util.js'
-const serverTemplate =async (url) => {
+
+interface IServerTemplate{
+    url:String
+}
+const serverTemplate =async (url):string => {
   const data = await readParseFile ("config.json");
   let urls = JSON.stringify(url);
   return `
@@ -26,21 +30,21 @@ const serverTemplate =async (url) => {
     app.use(helmet());
     app.use(cors());
     
-    app.get("/apinames", (req, res) => {
+    app.get("/apiNames", (req, res) => {
     mongoose.connection.db.listCollections().toArray((err, names) => {
         res.send(names.map((item) => item.name));
     });
     });
 
     app.post("/createdb",jsonParser, async(req, res) => {
-    const { apiname, propTitles, prop } = req.body;
+    const { apiName, propTitles, prop } = req.body;
 
     await createApi({
-        apiname,
+        apiName,
         propTitles,
         prop,
     });
-    const name = doPlural(apiname,true)
+    const name = doPlural(apiName,true)
     await mongoose.connection.createCollection(name)
     await res.send("Created")
     });

@@ -1,4 +1,4 @@
-const dbConnectionTemplate = () => {
+const dbConnectionTemplate = ():string => {
   return `
     const mongoose = require("mongoose");
     const connectDb = async ({ url }) => {
