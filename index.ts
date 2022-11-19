@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+import {createApi} from './src/index.ts'
+import {readParseFile} from "./util.js";
+
+let configs = await readParseFile("wakapi.config.json")
+
+for (let config of Object.keys(configs.tables)) {
+    createApi({
+        apiname:config,
+        url:configs.mongoDbUrl,
+        prop:configs.tables[config]
+    })
+}
+
+

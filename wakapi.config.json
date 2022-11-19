@@ -1,0 +1,12 @@
+{
+  "tables": {
+    "hero": {
+      "name": "String"
+    },
+    "family": {
+      "name": "String",
+      "connection": "String"
+    }
+  },
+  "mongoDbUrl": "mongodb+srv://waka:waka@cluster0.jtleo.mongodb.net/?retryWrites=true&w=majority"
+}
