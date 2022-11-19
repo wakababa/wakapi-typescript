@@ -7,28 +7,36 @@ import dbConnectionTemplate from "./config/connection.ts"
 import {existsSync} from "https://deno.land/std@0.162.0/node/fs.ts";
 import {writeJson} from "../util.js";
 
-export const createApi = async ({ apiname, prop, url }) => {
+
+interface ICreateApi{
+  apiName:String
+  prop:Object
+  url:String
+}
+
+
+export const createApi = async ({ apiName, prop, url }:ICreateApi) => {
   if (existsSync("config.json")) {
   } else {
     await  writeJson("config.json", [])
   }
-  await configTemplate({ name: apiname });
+  await configTemplate({ name: apiName });
   await Deno.mkdirSync("api", { recursive: true });
-  await Deno.mkdirSync(`api/${apiname}/controller`, { recursive: true });
-  await Deno.mkdirSync(`api/${apiname}/models`, { recursive: true });
-  await Deno.mkdirSync(`api/${apiname}/routes`, { recursive: true });
+  await Deno.mkdirSync(`api/${apiName}/controller`, { recursive: true });
+  await Deno.mkdirSync(`api/${apiName}/models`, { recursive: true });
+  await Deno.mkdirSync(`api/${apiName}/routes`, { recursive: true });
 
   await Deno.mkdirSync(`connection`, { recursive: true });
   const connectTemp = dbConnectionTemplate();
   const serverTemp =await serverTemplate(url);
-  const routeTemp = routeTemplate({ apiname });
+  const routeTemp = routeTemplate({ apiName });
   const controllerTemp = controllerTemplate({
-    apiname,
+    apiName,
     prop: Object.keys(prop),
   });
 
   const modelTemp = modelTemplate({
-    name: apiname,
+    name: apiName,
     prop: prop,
   });
   await Deno.writeTextFile("server.js", serverTemp);
@@ -36,14 +44,14 @@ export const createApi = async ({ apiname, prop, url }) => {
   PORT= 5000
   URL = ${url}
   `);
-  await Deno.writeTextFile(`api/${apiname}/controller/index.js`, controllerTemp);
-  await Deno.writeTextFile(`api/${apiname}/models/${apiname}.js`, modelTemp);
+  await Deno.writeTextFile(`api/${apiName}/controller/index.js`, controllerTemp);
+  await Deno.writeTextFile(`api/${apiName}/models/${apiName}.js`, modelTemp);
   await Deno.writeTextFile(
-    `api/${apiname}/routes/index.json`,
+    `api/${apiName}/routes/index.json`,
     JSON.stringify(routeTemp)
   );
   await Deno.writeTextFile(`connection/connection.js`, connectTemp);
 
-  await console.log(`You created api: ${apiname}`);
+  await console.log(`You created api: ${apiName}`);
 };
 

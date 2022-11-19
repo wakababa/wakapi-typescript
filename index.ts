@@ -6,7 +6,7 @@ let configs = await readParseFile("wakapi.config.json")
 
 for (let config of Object.keys(configs.tables)) {
     createApi({
-        apiname:config,
+        apiName:config,
         url:configs.mongoDbUrl,
         prop:configs.tables[config]
     })
