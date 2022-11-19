@@ -1,6 +1,6 @@
 {
-  "name": "generate-api",
-  "version": "1.0.0",
+  "name": "wakapi-typescript",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "bin": {

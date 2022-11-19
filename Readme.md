@@ -4,9 +4,9 @@
 
 ## The Aim faster build api
 
-`npm install generate-api --save`
+`npm install wakapi-typescript --save`
 
-`npx generate-api --save`
+`npx wakapi-typescript --save`
 
 You can easly create your api without any problem.Can change everything in code nothing to hid from you !
 
