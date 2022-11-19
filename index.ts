@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
 import {createApi} from './src/index.ts'
 import {readParseFile} from "./util.js";
